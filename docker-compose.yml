@@ -17,6 +17,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
       - DRONE_HOST=http://drone.unl.su
       - DRONE_GITHUB_SCOPE=repo,repo:status,user:email,read:org
+      - DRONE_ADMIN=ay-b
 
   drone-agent:
     image: drone/drone:0.8
@@ -28,3 +29,8 @@ services:
     environment:
       - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
+      - DRONE_HOST=http://drone.unl.su
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+      - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+
